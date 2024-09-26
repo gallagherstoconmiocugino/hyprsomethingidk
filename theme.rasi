@@ -1,0 +1,91 @@
+  configuration {
+  display-drun: "Apps:";
+  display-run: "";
+  display-window: "Window:";
+  drun-display-format : "{icon} {name}";
+  font: "Liberation Mono 9";
+  modi: "window,run,drun";
+  show-icons: true;
+  icon-theme: "Papirus";
+}
+
+@theme "/dev/null"
+
+*{
+ bg: #000000;
+ bg-alt: #ffffff;
+
+ fg: #ffffff;
+
+ background-color: @bg;
+
+ border: 0; 
+ margin: 0;
+ padding: 0;
+ spacing: 2;
+}
+
+window {
+
+  width: 25%;
+  border: 2;
+  border-color: @bg-alt;
+  border-radius: 4; 
+}
+
+element {
+  padding: 6;
+  background-color: @bg;
+  text-color: @fg;
+}
+
+element selected {
+  background-color: @bg-alt;
+  text-color: @bg;
+  border-radius: 0%;
+}
+
+element-text {
+  background-color: inherit;
+  text-color: inherit;
+  vertical-align: 0.5;
+}
+
+element-icon {
+  background-color: inherit;
+  text-color: inherit;
+  size: 30;
+}
+
+entry {
+  background-color: @bg;
+  padding: 10;
+  text-color: @fg;
+}
+
+inputbar {  
+  children: [prompt, entry];
+}
+
+inputbar {
+  background-color: @bg;
+}
+
+listview {
+  background-color: @bg;
+  margin: 0 10 10 10;
+  columns: 1;
+  lines: 6;
+}
+
+mainbox {
+  background-color: @bg;
+  children: [inputbar, listview];
+}
+
+prompt {
+  background-color: @bg;
+  enabled: true;
+  padding: 10;
+  text-color: @fg;
+}
