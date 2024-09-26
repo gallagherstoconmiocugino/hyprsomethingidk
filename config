@@ -1,0 +1,116 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar at the bottom of your screen
+    "height": 20, // Waybar height
+    // "width": 1366, // Waybar width
+    // Choose the order of the modules
+    "modules-left": [ "hyprland/workspaces", "sway/mode"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray","cpu","memory","pulseaudio","network"],
+
+   "hyprland/workspaces": {
+    "format": "{name}",
+    "format-icons": {
+      "active": "",
+      "default": "o",
+      "persistent": ""
+    },
+    "on-scroll-up": "hyprctl dispatch workspace r-1",
+    "on-scroll-down": "hyprctl dispatch workspace r+1",
+    "all-outputs": false,
+    "persistent_workspaces": {
+      "*": 10
+    }
+  }
+
+
+   ,
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "tray": {
+        "icon-size": 15,
+        "spacing": 5
+    },
+    "clock": {
+    "interval": 1,
+    "format": "{:%a %d %b %H:%M:%S}",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+    "interval": 1,
+        "format": "CPU: {usage}%"
+    },
+    "memory": {
+    "interval": 1,
+        "format": "RAM: {}%"
+    },
+    "battery": {
+        "bat": "BAT0",
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}%     ",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "format-wifi": "NET: ON",
+        "format-ethernet": "NET: ON",
+        "format-disconnected": "NET: OFF"
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "VOL: {volume}%",
+        "format-bluetooth": "VOL: {volume}%",
+        "format-muted": "VOL: 0%",
+        "max-volume": "150%",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/spotify": {
+        "format": " {}",
+        "max-length": 40,
+        "interval": 30, // Remove this if your script is endless and write in loop
+        "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
+        "exec-if": "pgrep spotify"
+    },
+     "custom/ff": {
+        "format": "    {}",
+        "max-length": 40,
+
+         "on-click": "hyprctl dispatch exec /opt/firefox/firefox"
+
+    },
+    "custom/nemo": {
+        "format": "    {}",
+        "max-length": 40,
+           "on-click": "hyprctl dispatch exec nemo"
+         },
+
+    "custom/chrome": {
+        "format": "     {}",
+        "max-length": 40,
+                "on-click": "hyprctl dispatch exec google-chrome"
+
+    },
+    "custom/libre": {
+        "format": "     {}",
+        "max-length": 40,
+          "on-click": "hyprctl dispatch exec libre"
+
+    }
+
+}
