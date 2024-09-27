@@ -12,12 +12,12 @@
 @theme "/dev/null"
 
 *{
- bg: #000000;
+ bg: rgba(0,0,0,0);
  bg-alt: #ffffff;
 
  fg: #ffffff;
 
- background-color: @bg;
+ background-color: rgba(0,0,0,0.8);
 
  border: 0; 
  margin: 0;
@@ -41,8 +41,9 @@ element {
 
 element selected {
   background-color: @bg-alt;
-  text-color: @bg;
-  border-radius: 0%;
+  text-color: rgba(0,0,0,1);
+  border-radius: 4;
+  border: 2;
 }
 
 element-text {
