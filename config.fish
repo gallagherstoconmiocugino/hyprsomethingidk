@@ -27,15 +27,15 @@ micro $HOME/.config/fish/config.fish
 end
 
 function sospendi
-echo Simone | sudo -S systemctl suspend
+bash $HOME/suspendleland.sh
 end
 
 function riavvia
-echo Simone | sudo -S reboot now
+bash $HOME/restartleland.sh
 end
 
 function spegni
-echo Simone | sudo -S shutdown now
+bash $HOME/shutleland.sh
 end
 
 function edithypr
@@ -46,7 +46,7 @@ function minifetch
 clear && fastfetch -c $HOME/.config/fastfetch/config2.jsonc --colors-block-range-start 9 --colors-block-width 3
 end
 
-function exithypr
+function esci
 bash $HOME/exitleland.sh
 end
 
