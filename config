@@ -61,7 +61,8 @@
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
         "format-wifi": "NET: ON",
         "format-ethernet": "NET: ON",
-        "format-disconnected": "NET: OFF"
+        "format-disconnected": "NET: OFF",
+        "on-click": "kitty nmtui"
     },
     "pulseaudio": {
         "scroll-step": 5,
