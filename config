@@ -79,7 +79,8 @@
             "car": "",
             "default": ["", ""]
         },
-        "on-click": "pavucontrol"
+       // "on-click": "pavucontrol"
+       "on-click": "kitty ncpamixer"
     },
     "custom/spotify": {
         "format": " {}",
