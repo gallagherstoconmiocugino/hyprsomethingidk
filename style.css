@@ -43,7 +43,7 @@ padding: 3px 0px 0 0 ;
     border-bottom: 3px solid white;
 }
 
-#clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode {
+#clock, #battery, #cpu, #memory, #bluetooth, #network, #pulseaudio, #custom-spotify, #tray, #mode {
     padding: 2px 5px 0 3px;
     margin: 0 3px;
 
