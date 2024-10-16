@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": [ "hyprland/workspaces", "sway/mode"],
     "modules-center": ["clock"],
-    "modules-right": ["tray","cpu","memory","pulseaudio","network"],
+    "modules-right": ["tray","cpu","memory","pulseaudio","bluetooth","network"],
 
    "hyprland/workspaces": {
     "format": "{name}",
@@ -64,6 +64,11 @@
         "format-disconnected": "NET: OFF",
         "on-click": "kitty nmtui"
     },
+     "bluetooth": {
+     "format-off": "BLU: OFF",
+     "format-on": "BLU: ON",
+     "on-click": "kitty bluetui"
+      },
     "pulseaudio": {
         "scroll-step": 5,
         "format": "VOL: {volume}%",
