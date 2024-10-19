@@ -19,7 +19,7 @@ w3m -4 https://archlinux.org/news
 end
 
 function archbtw
-clear && fastfetch
+clear && fastfetch -c $HOME/.config/fastfetch/config2.jsonc --colors-block-range-start 9 --colors-block-width 3
 end
 
 function editfish
@@ -43,7 +43,7 @@ micro $HOME/.config/hypr/hyprland.conf
 end
 
 function minifetch
-clear && fastfetch -c $HOME/.config/fastfetch/config2.jsonc --colors-block-range-start 9 --colors-block-width 3
+clear && fastfetch -c $HOME/.config/fastfetch/config4.jsonc --colors-block-range-start 9 --colors-block-width 3
 end
 
 function esci
