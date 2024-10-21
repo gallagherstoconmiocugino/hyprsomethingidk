@@ -50,5 +50,13 @@ function esci
 bash $HOME/exitleland.sh
 end
 
+function reswaybar
+pkill waybar && sleep 1 && hyprctl dispatch exec waybar && notify-send "waybar riavviato"
+end
+
+function resdunst
+pkill dunst && sleep 1 && hyprctl dispatch exec dunst && notify-send "dunst riavviato"
+end
+
 set -Ux EDITOR micro
 set -Ux VISUAL micro
