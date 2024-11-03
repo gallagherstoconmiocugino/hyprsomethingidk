@@ -43,7 +43,7 @@ padding: 3px 0px 0 0 ;
     border-bottom: 3px solid white;
 }
 
-#clock, #battery, #cpu, #memory, #bluetooth, #network, #pulseaudio, #tray, #mode {
+#clock, #battery, #cpu, #memory, #bluetooth, #network, #backlight, #pulseaudio, #tray, #mode {
     padding: 2px 5px 0 3px;
     margin: 0 3px;
 
