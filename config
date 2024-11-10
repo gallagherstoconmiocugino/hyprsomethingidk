@@ -55,7 +55,7 @@
         "interval": 1
     },
     "backlight": {
-    "format": "BRT: {percent}%" 
+    "format": "BRI: {percent}%" 
     },
     "network": {
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
