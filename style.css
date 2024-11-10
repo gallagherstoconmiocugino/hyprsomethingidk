@@ -43,7 +43,7 @@ padding: 3px 0px 0 0 ;
     border-bottom: 3px solid white;
 }
 
-#clock, #battery, #cpu, #memory, #bluetooth, #network, #backlight, #pulseaudio, #tray, #mode {
+#clock, #keyboard-state, #battery, #cpu, #memory, #bluetooth, #network, #backlight, #pulseaudio, #tray, #mode {
     padding: 2px 5px 0 3px;
     margin: 0 3px;
 
@@ -51,10 +51,6 @@ padding: 3px 0px 0 0 ;
 
 #clock {
     font-weight: bold;
-}
-
-#battery.critical {
-color: #ffffff;
 }
 
 #battery.warning {
@@ -68,23 +64,6 @@ color: #ff0000;
 #battery.charging {
 color: #00ff00;
 }
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: black;
-    }
-}
-
-#battery.warning:not(.charging) {
-    color: white;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
 
 #network.disconnected {
     background: #f53c3c;
