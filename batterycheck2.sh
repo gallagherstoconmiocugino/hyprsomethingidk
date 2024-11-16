@@ -1,5 +1,6 @@
 #!/bin/bash
 
+done0=0
 done1=0
 done2=0
 done3=0
@@ -10,6 +11,17 @@ while true; do
     STATUS=$(cat /sys/class/power_supply/BAT1/status)
     CAPACITY=$(cat /sys/class/power_supply/BAT1/capacity)
     if [ "$STATUS" == "Charging" ]; then
+       if [ "$CAPACITY" -eq 100 ]; then
+           if [ $done0 -eq 0 ]; then
+           done0=1
+           done1=1
+           done2=0
+           done3=0
+           done4=0
+           done5=0
+           dunstify -i "/usr/share/icons/AdwaitaLegacy/48x48/legacy/battery-full.png" "Battery Full" "You can now unplug the AC adapter"
+           fi
+       else
        if [ $done1 -eq 0 ]; then
        done1=1
        done2=0
@@ -19,8 +31,10 @@ while true; do
        pw-play /home/simone/Musica/battery2.mp3
        dunstify -i "/usr/share/icons/AdwaitaLegacy/48x48/legacy/ac-adapter.png" "Battery Charging" "Level is at ${CAPACITY}%"
     fi
+ fi
  else
   if [ $done1 -eq 1 ]; then
+  done0=0
   done1=0
   done2=0
   done3=0
