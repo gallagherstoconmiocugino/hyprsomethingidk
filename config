@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": [ "hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["keyboard-state","tray","battery","cpu","memory","pulseaudio","backlight","bluetooth","network"], //add battery if you're on a laptop
+    "modules-right": ["keyboard-state","tray","battery","cpu","memory","backlight","pulseaudio","bluetooth","network"], //add battery if you're on a laptop
 
    "hyprland/workspaces": {
     "format": "{name}",
@@ -46,13 +46,13 @@
         "bat": "BAT1",
         "states": {
             // "good": 95,
-            "warning": 30,
-            "critical": 15
+            "warning": 40,
+            "critical": 20
         },
         "format": "BAT: {capacity}%",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "interval": 1
+        "interval": 3
     },
     "backlight": {
     "format": "BRI: {percent}%" 
