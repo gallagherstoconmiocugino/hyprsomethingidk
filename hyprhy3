@@ -267,10 +267,15 @@ bind = $mainMod, A, movewindow, l
 bind = $mainMod, S, movewindow, d
 bind = $mainMod, D, movewindow, r
 
-bind = $mainMod ALT, right, resizeactive, 60 0
-bind = $mainMod ALT, left, resizeactive, -60 0
-bind = $mainMod ALT, up, resizeactive, 0 -60
-bind = $mainMod ALT, down, resizeactive, 0 60
+#bind = $mainMod ALT, right, resizeactive, 60 0
+#bind = $mainMod ALT, left, resizeactive, -60 0
+#bind = $mainMod ALT, up, resizeactive, 0 -60
+#bind = $mainMod ALT, down, resizeactive, 0 60
+
+bind = $mainMod ALT, right, resizeactive, -60 0
+bind = $mainMod ALT, left, resizeactive, 60 0
+bind = $mainMod ALT, up, resizeactive, 0 60
+bind = $mainMod ALT, down, resizeactive, 0 -60
 
 bind = $mainMod CTRL, left, exec, hyprctl dispatch workspace r-1
 bind = $mainMod CTRL, right, exec, hyprctl dispatch workspace r+1
@@ -337,6 +342,8 @@ env = QT_QPA_PLATFORMTHEME,qt6ct
 
 bind = $mainMod, G, hy3:makegroup, opposite
 bind = $mainMod, H, hy3:changegroup, opposite
+bind = $mainMod, K, hy3:makegroup, tab, ephemeral
+bind = $mainMod, L, hy3:changegroup, untab
 
 plugin {
     hy3 {
@@ -344,7 +351,7 @@ plugin {
         # 0 - always show gaps
         # 1 - hide gaps with a single window onscreen
         # 2 - 1 but also show the window border
-        no_gaps_when_only = 0 # default: 0
+        no_gaps_when_only = 1 # default: 0
 
         # policy controlling what happens when a node is removed from a group,
         # leaving only a group
@@ -359,7 +366,59 @@ plugin {
         # if a tab group will automatically be created for the first window spawned in a workspace
         tab_first_window = false
 
+ tabs {
+                  # height of the tab bar
+                  height = 15 # default: 15
       
+                  # padding between the tab bar and its focused node
+                  padding = 2 # default: 5
+      
+                  # the tab bar should animate in/out from the top instead of below the window
+                  from_top = true # default: false
+      
+                  # rounding of tab bar corners
+                  rounding = 0 # default: 3
+
+                  border_width = 1
+
+                  radius = 4
+      
+                  # render the window title on the bar
+                  render_text = true # default: true
+      
+                  # center the window title
+                  text_center = true # default: false
+      
+                  # font to render the window title with
+                  text_font = Liberation Mono # default: Sans
+      
+                  # height of the window title
+                  text_height = 8 # default: 8
+      
+                  # active tab bar segment color
+                  col.active = rgba(0,0,0,0.8) # default: 0xff32b4ff
+                  col.active.border = rgba(255,255,255,1)
+      
+                  # urgent tab bar segment color
+                  col.urgent = rgba(255,144,0,1) # default: 0xffff4f4f
+                  col.urgent.border = rgba(255,255,255,1)
+      
+                  # inactive tab bar segment color
+                  col.inactive = rgba(0,0,0,0.8) # default: 0x80808080
+                  col.inactive.border = rgba(0,0,0,0)
+      
+                  # active tab bar text color
+                  col.text.active = 0xff000000 # default: 0xff000000
+      
+                  # urgent tab bar text color
+                  col.text.urgent = 0xff000000 # default: 0xff000000
+      
+                  # inactive tab bar text color
+                  col.text.inactive = 0xff000000 # default: 0xff000000
+
+                  opacity = 0.8
+              }
+           
 
         # autotiling settings
         autotile {
@@ -367,7 +426,7 @@ plugin {
             enable = true # default: false
 
             # make autotile-created groups ephemeral
-            ephemeral_groups = true # default: true
+            ephemeral_groups = false # default: true
 
             # if a window would be squished smaller than this width, a vertical split will be created
             # -1 = never automatically split vertically
