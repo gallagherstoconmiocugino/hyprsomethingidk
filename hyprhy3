@@ -74,8 +74,11 @@ hide_on_key_press = true
 
 # https://wiki.hyprland.org/Configuring/Variables/#general
 general { 
+    #gaps_in = 2
+    #gaps_out = 4
+
     gaps_in = 2
-    gaps_out = 4
+    gaps_out = 2
 
     border_size = 1
 
@@ -267,15 +270,15 @@ bind = $mainMod, A, movewindow, l
 bind = $mainMod, S, movewindow, d
 bind = $mainMod, D, movewindow, r
 
-#bind = $mainMod ALT, right, resizeactive, 60 0
-#bind = $mainMod ALT, left, resizeactive, -60 0
-#bind = $mainMod ALT, up, resizeactive, 0 -60
-#bind = $mainMod ALT, down, resizeactive, 0 60
+bind = $mainMod ALT, right, resizeactive, 60 0
+bind = $mainMod ALT, left, resizeactive, -60 0
+bind = $mainMod ALT, up, resizeactive, 0 -60
+bind = $mainMod ALT, down, resizeactive, 0 60
 
-bind = $mainMod ALT, right, resizeactive, -60 0
-bind = $mainMod ALT, left, resizeactive, 60 0
-bind = $mainMod ALT, up, resizeactive, 0 60
-bind = $mainMod ALT, down, resizeactive, 0 -60
+#bind = $mainMod ALT, right, resizeactive, -60 0
+#bind = $mainMod ALT, left, resizeactive, 60 0
+#bind = $mainMod ALT, up, resizeactive, 0 60
+#bind = $mainMod ALT, down, resizeactive, 0 -60
 
 bind = $mainMod CTRL, left, exec, hyprctl dispatch workspace r-1
 bind = $mainMod CTRL, right, exec, hyprctl dispatch workspace r+1
@@ -423,7 +426,7 @@ plugin {
         # autotiling settings
         autotile {
             # enable autotile
-            enable = true # default: false
+            enable = false # default: false
 
             # make autotile-created groups ephemeral
             ephemeral_groups = false # default: true
