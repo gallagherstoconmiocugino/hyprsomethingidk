@@ -156,9 +156,6 @@ hl.bind(mainMod .. " + ALT + left", hl.dsp.window.resize({x=-60,y=0,relative=tru
 hl.bind(mainMod .. " + ALT + up", hl.dsp.window.resize({x=0,y=60,relative=true}))
 hl.bind(mainMod .. " + ALT + down", hl.dsp.window.resize({x=0,y=-60,relative=true}))
 
-hl.bind("SUPER + code:20", hl.dsp.layout("splitratio -0.1"), { repeating = true }) -- "-" key
-hl.bind("SUPER + code:21", hl.dsp.layout("splitratio +0.1"), { repeating = true }) -- "=" key
-
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%- && dunstify -i \"/usr/share/icons/AdwaitaLegacy/48x48/legacy/dialog-information.png\" -t 1000 \"Decreased brightness\" \"Level: $(brightnessctl -m | awk -F',' '{print $4}' | tr -d '%')%\""))
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set 5%+  && dunstify -i \"/usr/share/icons/AdwaitaLegacy/48x48/legacy/dialog-information.png\" -t 1000 \"Increased brightness\" \"Level: $(brightnessctl -m | awk -F',' '{print $4}' | tr -d '%')%\""))
 hl.bind("ALT + XF86MonBrightnessDown", hl.dsp.exec_cmd("dunstify -t 1000 \"Brightness Level\" \"$(brightnessctl -m | awk -F',' '{print $4}' | tr -d '%')%\""))
