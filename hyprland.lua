@@ -1,9 +1,5 @@
-hl.monitor({
-    output   = "eDP-1",
-    mode     = "1920x1080@60.01",
-    position = "0x0",
-    scale    = 1,
-})
+hl.monitor({ output = "eDP-1", mode = "1920x1080@60.01", position = "2560x0", scale = "1"})
+hl.monitor({ output = "HDMI-A-1", mode = "2560x1440@120", position = "0x0", scale = "1"})
 
 hl.on("hyprland.start", function ()
 hl.exec_cmd("hyprpm reload")
@@ -86,7 +82,7 @@ hl.config({
         kb_layout  = "it",
         numlock_by_default = false,
         follow_mouse = 1,
-        sensitivity = 0,
+        sensitivity = -0.5,
         touchpad = {
             natural_scroll = false,
             disable_while_typing = false,
@@ -101,8 +97,8 @@ hl.gesture({
 })
 
 hl.device({
-    name        = "epic-mouse-v1",
-    sensitivity = -0.5,
+    name        = "logitech-gaming-mouse-g402",
+    sensitivity = -0.9,
 })
 
 --[[hl.gesture({
@@ -173,6 +169,7 @@ hl.window_rule({name="nwg-look",match={class="nwg-look"},opacity="0.8"})
 hl.window_rule({name="hyprland-share-picker",match={class="hyprland-share-picker"},opacity="0.8"})
 hl.window_rule({name="system-config-printer",match={class="system-config-printer"},opacity="0.8"})
 hl.window_rule({name="org.kde.ark",match={class="org.kde.ark"},opacity="0.8"})
+hl.window_rule({name="mate-calc",match={class="mate-calc"},opacity="0.8"})
 
 hl.layer_rule({name="waybar",match={namespace="waybar"},blur=true})
 hl.layer_rule({name="rofi",match={namespace="rofi"},blur=true})
@@ -192,4 +189,5 @@ local suppressMaximizeRule = hl.window_rule({
 local hy3 = hl.plugin.hy3
 
 hl.bind(mainMod .. " + G", hy3.make_group("opposite"))
+--hl.bind("ALT + G", hy3.make_group("opposite"))
 hl.bind(mainMod .. " + J", hy3.change_group("opposite"))
